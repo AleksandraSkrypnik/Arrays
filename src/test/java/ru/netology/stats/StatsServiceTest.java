@@ -1,0 +1,68 @@
+package ru.netology.stats;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class StatsServiceTest {
+
+    @Test
+
+    public void testSumSales() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        long expected = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
+        long actual = service.sumSales(sales);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testAvgSales() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        long expected = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
+        long actual = service.avgSales(sales);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testMaxSales() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        long expected = 8;
+        long actual = service.maxSales(sales);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testMinSales() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        long expected = 9;
+        long actual = service.minSales(sales);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testLessThenAvgSales() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        long expected = 5;
+        long actual = service.lessThenAvgSales(sales);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testMoreThenAvgSales() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        long expected = 5;
+        long actual = service.moreThenAvgSales(sales);
+        Assertions.assertEquals(expected, actual);
+    }
+}
